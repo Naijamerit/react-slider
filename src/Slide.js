@@ -26,21 +26,13 @@ function slide() {
   };
 
   function Previmg() {
-    setIndex(function (prevState) {
-      if (prevState > 0) {
-        prevState = prevState - 1;
-      }
-      return prevState;
-    });
+    const Previmg = getIndex === 0 ? SlideData.length - 1 : getIndex - 1;
+    setIndex(Previmg);
   }
 
   function Nextimg() {
-    setIndex(function (prevState) {
-      if (prevState < SlideData.length - 1) {
-        prevState = prevState + 1;
-      }
-      return prevState;
-    });
+    const Nextimg = getIndex === SlideData.length - 1 ? 0 : getIndex + 1;
+    setIndex(Nextimg);
   }
 
   return (
