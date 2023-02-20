@@ -6,7 +6,7 @@ function slide() {
   const [getIndex, setIndex] = useState(0);
   const imageStyle = {
     backgroundImage: `url(${SlideData[getIndex].url})`,
-    border: 'solid 2px red',
+    border: 'solid 3px green',
     width: '100%',
     height: '100%',
     backgroundPosition: 'center',
@@ -45,24 +45,18 @@ function slide() {
 
   return (
     <div style={{ height: '100%', position: 'relative', textAlign: 'center' }}>
-      <h1 style={{color:'red'}}>{SlideData[getIndex].name}</h1>
-      <p style={{ fontSize: '1.5rem' }}>{SlideData[getIndex].artist}</p>
+      <h1 style={{ color: 'red' }}>{SlideData[getIndex].name}</h1>
+      <p style={{ color: 'green', fontSize: '1.5rem' }}>
+        {SlideData[getIndex].artist}
+      </p>
       <div style={imageStyle} />
-      <p>{SlideData[getIndex].description}</p>
+      <p style={{ color: 'green' }}>{SlideData[getIndex].description}</p>
 
       <div onClick={Previmg} style={prev}>
-        <box-icon
-          size="lg"
-          name="left-arrow"
-          color="#e83004"
-        ></box-icon>
+        <box-icon size="lg" name="left-arrow" color="#e83004"></box-icon>
       </div>
       <div onClick={Nextimg} style={next}>
-        <box-icon
-          name="right-arrow"
-          size="lg"
-          color="#e83004"
-        ></box-icon>
+        <box-icon name="right-arrow" size="lg" color="#e83004"></box-icon>
       </div>
     </div>
   );
